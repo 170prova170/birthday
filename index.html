@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invito Compleanno - Accesso</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Accesso - Invito Compleanno</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="login-container">
-        <h1>Inserisci la password</h1>
-        <input type="password" id="passwordInput" placeholder="Password">
-        <button onclick="checkPassword()">Invia</button>
-        <p id="errorMessage"></p>
+<body class="black-bg">
+  <main class="center-vert">
+    <div class="gate">
+      <h1 class="mono">Inserisci la password</h1>
+      <div class="input-row">
+        <input id="passwordInput" type="password" placeholder="Password" aria-label="password">
+        <button id="submitBtn">Invia</button>
+      </div>
+      <p id="errorMessage" class="error"></p>
+      <p class="hint">Se hai difficoltà contattami sul numero <strong>0924 25380</strong>.</p>
     </div>
+  </main>
 
-    <script src="script.js"></script>
+  <script src="auth.js"></script>
 </body>
 </html>
