@@ -1,0 +1,43 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 80px auto;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+h1 {
+    color: #ff4081;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.rsvp-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 30px;
+    background-color: #ff4081;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+
+.rsvp-button:hover {
+    transform: scale(1.1);
+}
