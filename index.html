@@ -3,19 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Accesso - Invito Compleanno</title>
+  <title>Accesso - Invito Privato</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="black-bg">
   <main class="center-vert">
     <div class="gate">
-      <h1 class="mono">Inserisci la password</h1>
+      <h1 class="mono big">Inserisci la password</h1>
+      <p class="mono subtitle">Solo gli invitati possono entrare</p>
+
       <div class="input-row">
         <input id="passwordInput" type="password" placeholder="Password" aria-label="password">
-        <button id="submitBtn">Invia</button>
+        <button id="submitBtn" class="button-ghost">Entra</button>
       </div>
-      <p id="errorMessage" class="error"></p>
-      <p class="hint">Se hai difficoltà contattami sul numero <strong>0924 25380</strong>.</p>
+
+      <p id="errorMessage" class="error" role="status" aria-live="polite"></p>
+      <p class="hint">Se hai problemi contatta: <strong>0924 25380</strong></p>
     </div>
   </main>
 
