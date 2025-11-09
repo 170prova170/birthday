@@ -1,4 +1,4 @@
-/* stars.js v2.2 - definitivo (usa stars-config.js se presente) */
+/* stars.js v2.3 - definitivo (usa stars-config.js se presente) */
 (function(){
   function rand(min, max){ return Math.random() * (max - min) + min; }
   function clamp(v, a, b){ return Math.max(a, Math.min(b, v)); }
@@ -87,7 +87,9 @@
     wrap.style.setProperty('--tw', Math.max(6, Math.round(Rpx*0.4)) + 'px');
     wrap.style.transform = "translate(-50%,-50%) rotate(var(--rot))";
     wrap.style.opacity = opacity;
-    wrap.style.animation = `stars-twinkle ${duration}s ease-in-out ${delay}s infinite`;
+    // animation delay negativo random per far partire le stelle a punti casuali senza spegnimenti
+    const negDelay = -rand(0, duration);
+    wrap.style.animation = `stars-twinkle ${duration}s ease-in-out ${negDelay}s infinite`;
     wrap.style.willChange = "transform, opacity, filter";
 
     const glowDiv = document.createElement('div');
@@ -103,7 +105,7 @@
     glowDiv.style.filter = glow ? `blur(${2.5 * glowScaleFactor}px)` : 'none';
     glowDiv.style.background = cfg.glowColor || DEFAULTS.glowColor;
     glowDiv.style.mixBlendMode = 'screen';
-    glowDiv.style.animation = `stars-glow ${duration}s ease-in-out ${delay}s infinite`;
+    glowDiv.style.animation = `stars-glow ${duration}s ease-in-out ${negDelay}s infinite`;
 
     const svg = createSVGStar(Rpx, rpx, cfg.starColor || DEFAULTS.starColor, glow);
     svg.style.position = 'relative';
