@@ -13,6 +13,16 @@
   <script src="main.js" defer></script>
 </head>
 <body class="main">
+<script>
+  // Controllo accesso
+  const expiry = parseInt(localStorage.getItem('invited_expiry'), 10);
+
+  if (!expiry || Date.now() > expiry) {
+      // accesso scaduto o inesistente -> torna al login
+      window.location.href = 'index.html';
+  }
+</script>
+
   <div id="stars-root" aria-hidden="true"></div>
 
   <nav class="top-buttons" role="navigation" aria-label="Navigazione principale">
