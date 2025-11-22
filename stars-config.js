@@ -29,5 +29,6 @@ window.STARS_CONFIG = {
   // Colori e glow
   starColor: "#e6c86a",
   glowColor: "rgba(230,200,110,0.95)",
-  glowStrength: 0.7
+  glowStrength: 0.5
 };
+
