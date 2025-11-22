@@ -1,42 +1,42 @@
 /* style.css - file completo definitivo
-   - Font: Playfair Display per titoli, Roboto Mono per numeri
-   - Stelle posizionate dietro (#stars-root)
-   - Top buttons: blu standard con bordo dorato; bottone centrale dorato per le sotto-pagine
-   - Info-card: "isolette" opache, leggerissimo giallo sull'bianco
-   - Login page (index.html) rimane nera
-   - OTTIMIZZATO PER MOBILE (animazioni leggere)
+    - Font: Playfair Display per titoli, Roboto Mono per numeri
+    - Stelle posizionate dietro (#stars-root)
+    - Top buttons: blu standard con bordo dorato; bottone centrale dorato per le sotto-pagine
+    - Info-card: "isolette" opache, leggerissimo giallo sull'bianco
+    - Login page (index.html) rimane nera
+    - OTTIMIZZATO PER MOBILE (animazioni leggere)
 */
 
 /* ---------------------------
-   IMPORT FONT
-   --------------------------- */
+    IMPORT FONT
+    --------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Roboto+Mono:wght@400;700&display=swap');
 
 /* ---------------------------
-   RESET / BASE
-   --------------------------- */
+    RESET / BASE
+    --------------------------- */
 * { box-sizing: border-box; }
 html, body { height: 100%; margin: 0; padding: 0; }
 img { max-width:100%; display:block; }
 a { color: inherit; }
 
 /* ---------------------------
-   VARIABILI COLORI
-   --------------------------- */
+    VARIABILI COLORI
+    --------------------------- */
 :root {
   --bg: #ffffff;
-  --accent: #0b3d91;        /* blu elegante */
-  --gold: #cfa64a;          /* dorato chiaro */
-  --gold-strong: #d2ad3f;   /* dorato più ricco per sfumature */
+  --accent: #0b3d91;         /* blu elegante */
+  --gold: #cfa64a;           /* dorato chiaro */
+  --gold-strong: #d2ad3f;    /* dorato più ricco per sfumature */
   --muted: #5b6570;
-  --card-bg: #fffaf4;       /* leggerissimo giallo sul bianco per isole */
+  --card-bg: #fffaf4;        /* leggerissimo giallo sul bianco per isole */
   --shadow: rgba(11,61,145,0.08);
   --text: #111827;
 }
 
 /* ---------------------------
-   TIPOGRAFIA
-   --------------------------- */
+    TIPOGRAFIA
+    --------------------------- */
 body.main {
   font-family: "Playfair Display", Georgia, serif;
   background: var(--bg);
@@ -59,8 +59,8 @@ p, li {
 }
 
 /* ---------------------------
-   LAYOUT PRINCIPALE
-   --------------------------- */
+    LAYOUT PRINCIPALE
+    --------------------------- */
 .wrapper {
   max-width: 1100px;
   margin: 48px auto;
@@ -74,8 +74,8 @@ p, li {
 }
 
 /* ---------------------------
-   TOP NAV - bottoni centrati
-   --------------------------- */
+    TOP NAV - bottoni centrati
+    --------------------------- */
 .top-buttons {
   position: fixed;
   top: 16px;
@@ -141,8 +141,8 @@ p, li {
 }
 
 /* ---------------------------
-   HERO / TIMER (REVISIONE COMPLETA - FLEXBOX MONORIGA ADATTIVO)
-   --------------------------- */
+    HERO / TIMER (REVISIONE COMPLETA - FLEXBOX MONORIGA ADATTIVO)
+    --------------------------- */
 .hero {
   width: 100%;
   display: flex;
@@ -155,6 +155,7 @@ p, li {
   position: relative;
 }
 
+/* Titolo "Invito Privato" della pagina principale (index.html o main.html) */
 .site-title {
   margin: 0 0 8px 0;
   font-size: 2rem;
@@ -165,7 +166,7 @@ p, li {
 /* --- LAYOUT MONORIGA ADATTIVO --- */
 .timer-large {
   display: flex; /* Flexbox per tutti i dispositivi: 4 elementi in riga */
-  gap: 20px; /* <--- Spazio uniforme e adattivo tra gli elementi */
+  gap: 20px; /* Spazio uniforme e adattivo tra gli elementi */
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap; /* Forza tutti gli elementi sulla stessa riga */
@@ -178,7 +179,6 @@ p, li {
 }
 
 .time-col { 
-  /* Non impostare min-width fissi qui, li gestiremo con flex-grow/shrink e font-size */
   text-align: center; 
   flex: 1 1 auto; /* Permette a ogni colonna di crescere e restringersi in base allo spazio */
   /* Reset di eventuali margini specifici per ID/nth-child */
@@ -188,7 +188,7 @@ p, li {
 }
 .time-val {
   /* Dimensionamento del font basato su viewport units per adattarsi fluidamente */
-  font-size: clamp(2.5rem, 8vw, 7rem); /* <--- Magic! Da 2.5rem su mobile a 7rem su desktop */
+  font-size: clamp(2.5rem, 8vw, 7rem); /* Da 2.5rem su mobile a 7rem su desktop */
   font-weight: 800;
   color: var(--accent);
   line-height: 1;
@@ -198,11 +198,8 @@ p, li {
   -webkit-font-feature-settings: "tnum";
 }
 
-/* Rimuovi tutte le @media queries specifiche per il layout del timer-large */
-/* Il layout e la dimensione del font ora si adattano automaticamente */
-
 .time-label { 
-  font-size: clamp(0.8rem, 2.5vw, 1rem); /* <--- Adatta anche la label */
+  font-size: clamp(0.8rem, 2.5vw, 1rem); /* Adatta anche la label */
   color: var(--muted); 
   margin-top: 8px; 
 }
@@ -221,8 +218,23 @@ p, li {
 }
 
 /* ---------------------------
-   ISOLETTE / INFO-CARD (opache, leggero giallo)
-   --------------------------- */
+    TITOLI DELLE PAGINE SECONDARIE (es. Dress Code, Come Arrivare, Regalo)
+    --------------------------- */
+.page-title { /* <--- NUOVA CLASSE PER I TITOLI H1 DELLE PAGINE SECONDARIE */
+  font-size: clamp(2rem, 7vw, 3.8rem); /* Scala da 2rem a 3.8rem */
+  margin: 0 0 30px 0; /* Spazio sotto il titolo */
+  color: var(--accent);
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 900; /* Magari un po' più bold per i titoli pagina */
+  line-height: 1.2;
+  text-align: center;
+  padding: 0 10px; /* Padding orizzontale per evitare che tocchi i bordi su schermi stretti */
+}
+
+
+/* ---------------------------
+    ISOLETTE / INFO-CARD (opache, leggero giallo)
+    --------------------------- */
 .info-card {
   width: 100%;
   background: var(--card-bg);
@@ -240,8 +252,8 @@ p, li {
 .info-card p, .info-card li { color: #333; line-height: 1.6; font-size: 1.05rem; }
 
 /* ---------------------------
-   BOTTONI GENERALI
-   --------------------------- */
+    BOTTONI GENERALI
+    --------------------------- */
 .btn {
   padding: 10px 16px;
   border-radius: 8px;
@@ -269,7 +281,7 @@ p, li {
 }
 
 /* Bottone "Torna all'home" (usato come .btn-home quando necessario)
-   - sfondo dorato, testo bianco; al hover testo blu */
+    - sfondo dorato, testo bianco; al hover testo blu */
 .btn-home {
   background: linear-gradient(180deg, var(--gold-strong), var(--gold));
   color: #fff;
@@ -287,8 +299,8 @@ p, li {
 }
 
 /* ---------------------------
-   STARS (sfondo) - sempre dietro
-   --------------------------- */
+    STARS (sfondo) - sempre dietro
+    --------------------------- */
 #stars-root {
   position: fixed;
   inset: 0;
@@ -351,8 +363,8 @@ p, li {
 }
 
 /* ---------------------------
-   PAGINA LOGIN (index.html) - sfondo nero
-   --------------------------- */
+    PAGINA LOGIN (index.html) - sfondo nero
+    --------------------------- */
 .black-bg {
   background: #000;
   color: #fff;
@@ -401,31 +413,32 @@ p, li {
 .hint { font-size:0.9rem; color:#bbb; margin-top:10px; }
 
 /* ---------------------------
-   FOOTER
-   --------------------------- */
+    FOOTER
+    --------------------------- */
 .site-footer { font-size:0.9rem; color:#666; text-align:center; margin-top:6px; z-index:30; }
 
 /* ---------------------------
-   RESPONSIVE
-   --------------------------- */
+    RESPONSIVE GLOBALE (mantengo solo le regole globali)
+    --------------------------- */
 @media (max-width: 700px){
-  .time-val { font-size: 3.6rem; }
-  .time-col { min-width: 72px; }
+  /* Rimuovo le regole .time-val e .time-col perché gestite da clamp() e flexbox */
   .top-buttons { gap: 10px; top: 12px; left: 50%; transform: translateX(-50%); }
   .wrapper { padding: 20px; margin: 12px; }
   .info-card { padding: 18px; }
-  .site-title { font-size: 1.25rem; }
+  /* La classe .site-title ora è solo per la pagina principale */
+  /* .site-title { font-size: 1.25rem; } */ 
 }
 
+
 /* ---------------------------
-   NUOVO STILE PER IMMAGINE MAPPA (arrive.html)
-   --------------------------- */
+    NUOVO STILE PER IMMAGINE MAPPA (arrive.html)
+    --------------------------- */
 
 /* Contenitore per centrare l'immagine e dare spazio verticale */
 .map-image-container {
   width: 100%;
   text-align: center; /* Centra l'immagine orizzontalmente */
-  margin: 28px 0;     /* Spazio sopra e sotto */
+  margin: 28px 0;      /* Spazio sopra e sotto */
 }
 
 /* Lo stile dell'immagine stessa */
@@ -452,9 +465,3 @@ p, li {
   transform: translateY(-3px);
   box-shadow: 0 20px 50px rgba(11,61,145,0.2);
 }
-
-
-
-
-
-
