@@ -395,3 +395,39 @@ p, li {
   .info-card { padding: 18px; }
   .site-title { font-size: 1.25rem; }
 }
+
+/* ---------------------------
+   NUOVO STILE PER IMMAGINE MAPPA (arrive.html)
+   --------------------------- */
+
+/* Contenitore per centrare l'immagine e dare spazio verticale */
+.map-image-container {
+  width: 100%;
+  text-align: center; /* Centra l'immagine orizzontalmente */
+  margin: 28px 0;     /* Spazio sopra e sotto */
+}
+
+/* Lo stile dell'immagine stessa */
+.styled-map-image {
+  /* Rende l'immagine responsiva: si stringe su mobile ma non supera mai la sua grandezza originale */
+  max-width: 100%;
+  height: auto;
+  display: inline-block; /* Necessario per far funzionare il text-align:center del genitore */
+
+  /* ESTETICA */
+  /* Bordo dorato spesso (usa la variabile del tema) */
+  border: 3px solid var(--gold-strong);
+  /* Angoli arrotondati come le "info-card" */
+  border-radius: 12px;
+  /* Un'ombra elegante per farla "uscire" dalla pagina */
+  box-shadow: 0 15px 40px rgba(11,61,145,0.15);
+
+  /* Piccola transizione se si volesse aggiungere un effetto hover in futuro */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Opzionale: leggero effetto quando passi il mouse sopra l'immagine */
+.styled-map-image:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 50px rgba(11,61,145,0.2);
+}
