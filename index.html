@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Grazie - Chiusura</title>
+  <meta name="description" content="Pagina commemorativa — ringraziamenti e nota che il sito dell'evento è stato archiviato nei ricordi." />
+  <meta name="theme-color" content="#0b3d91" />
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #ffffff;
+      --accent: #0b3d91;        /* blu elegante */
+      --gold: #cfa64a;          /* dorato */
+      --muted: #6b7280;
+      --card: #fffaf4;
+      --maxw: 940px;
+      --radius: 14px;
+    }
+
+    /* Reset minimale */
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{height:100%;margin:0;padding:0}
+    body{
+      font-family: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: var(--bg);
+      color: #111;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.6;
+      padding:28px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    /* Sottile decorazione "stelle" dietro (statica, leggera) */
+    .bg-decor {
+      position:fixed;
+      inset:0;
+      z-index:0;
+      pointer-events:none;
+      background-image:
+        radial-gradient(circle at 8% 12%, rgba(207,166,74,0.18) 0 1px, transparent 2px),
+        radial-gradient(circle at 38% 30%, rgba(207,166,74,0.12) 0 1px, transparent 2px),
+        radial-gradient(circle at 72% 18%, rgba(207,166,74,0.14) 0 1px, transparent 2px),
+        radial-gradient(circle at 55% 78%, rgba(207,166,74,0.10) 0 1px, transparent 2px),
+        radial-gradient(circle at 22% 68%, rgba(207,166,74,0.09) 0 1px, transparent 2px);
+      opacity:0.95;
+      filter: saturate(1.02);
+    }
+
+    main {
+      position:relative;
+      z-index:10;
+      width:100%;
+      max-width:var(--maxw);
+      margin:0 auto;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.99), rgba(255,255,255,0.995));
+      border-radius: var(--radius);
+      padding:36px;
+      box-shadow: 0 24px 50px rgba(11,61,145,0.05);
+      border: 1px solid rgba(11,61,145,0.04);
+    }
+
+    .brand {
+      display:block;
+      font-family: "Playfair Display", Georgia, serif;
+      color: var(--accent);
+      font-weight:700;
+      font-size:1.15rem;
+      letter-spacing:0.2px;
+      margin-bottom:6px;
+    }
+
+    h1 {
+      margin: 6px 0 18px 0;
+      font-family: "Playfair Display", Georgia, serif;
+      color: var(--accent);
+      font-size:2.1rem;
+      line-height:1.05;
+    }
+
+    .lead {
+      margin:0 0 18px 0;
+      font-size:1.05rem;
+      color:#222;
+      max-width:820px;
+    }
+
+    .section {
+      margin-top:12px;
+      color:#333;
+      font-size:1rem;
+      text-align:left;
+    }
+
+    .emphasis {
+      color: var(--accent);
+      font-weight:700;
+    }
+
+    .gold-line {
+      width:56px;
+      height:4px;
+      background: linear-gradient(90deg,var(--gold), rgba(207,166,74,0.85));
+      border-radius:3px;
+      margin:20px 0;
+    }
+
+    footer {
+      margin-top:20px;
+      color:var(--muted);
+      font-size:0.95rem;
+      text-align:center;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width:720px){
+      body{padding:18px}
+      .card{padding:22px}
+      h1{font-size:1.5rem}
+      .lead{font-size:1rem}
+      .section{font-size:0.98rem}
+      .brand{font-size:1rem}
+      .gold-line{width:48px;height:3px}
+    }
+
+    /* Riduci contrasto delle decorazioni su schermi piccoli */
+    @media (max-width:420px){
+      .bg-decor{opacity:0.6; background-size:cover}
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-decor" aria-hidden="true"></div>
+
+  <main role="main" aria-labelledby="title">
+    <article class="card" aria-describedby="desc">
+      <span class="brand" aria-hidden="true">Marco Viola - Chiusura</span>
+
+      <h1 id="title">Grazie di cuore</h1>
+
+      <p class="lead" id="desc">
+        Grazie a chi è venuto, a chi ha condiviso una serata speciale e a chi, in qualunque modo, ha partecipato. Questo sito dell'evento rimane online come ricordo; i file originali dell'evento sono stati salvati privatamente dall'organizzazione.
+      </p>
+
+      <div class="gold-line" aria-hidden="true"></div>
+
+      <div class="section">
+        <p><strong>Un grazie sincero.</strong> Ci siamo divertiti, abbiamo festeggiato e abbiamo dato inizio a qualcosa di nuovo. Le emozioni e i ricordi di quella notte rimangono conservati qui, nella memoria di chi c'era.</p>
+
+        <p style="margin-top:12px"><span class="emphasis">Nota importante:</span> il sito rimane visibile esclusivamente come testimonianza pubblica. I file originali sono custoditi privatamente e non sono scaricabili da questa pagina. Se desideri una copia di foto o messaggi che ti riguardano, contattami direttamente in privato e ti aiuterò a recuperare ciò che ti interessa.</p>
+
+        <p style="margin-top:12px">Un ultimo saluto digitale, e poi si va avanti: grazie ancora per aver reso tutto speciale.</p>
+      </div>
+
+      <footer>
+        <div>Marco Viola — Novembre 2025</div>
+        <div style="margin-top:6px">Per richieste personali, contattami privatamente.</div>
+      </footer>
+    </article>
+  </main>
+</body>
+</html>
